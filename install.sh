@@ -1,6 +1,6 @@
-sudo adduser b1
-sudo usermod -aG sudo b1
-su - b1
+sudo adduser <user>
+sudo usermod -aG sudo <user>
+su - <user>
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install nginx -y
