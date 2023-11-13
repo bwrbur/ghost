@@ -19,6 +19,7 @@ sudo mkdir -p /var/www/<user>
 sudo chown <user>:<user> /var/www/<user>
 sudo chmod 775 /var/www/<user>
 cd /var/www/<user>
+ufw allow 22/tcp
 for cfip in `curl -sw '\n' https://www.cloudflare.com/ips-v{4,6}`; do ufw allow proto tcp from $cfip to any port 80; done
 for cfip in `curl -sw '\n' https://www.cloudflare.com/ips-v{4,6}`; do ufw allow proto tcp from $cfip to any port 443; done
 clear
